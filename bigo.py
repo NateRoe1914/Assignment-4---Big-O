@@ -37,14 +37,10 @@ def length_of_longest_substring_n3(s):
                 numerical_element = ord(elem)
                 frequency_list[numerical_element] += 1
                 length = j - i + 1
-                if length > longest_length:
-                    longest_length = length
+                longest_length = max(longest_length, length)
 
 
-    return longest_length
-            
-            
-            
+    return longest_length    
 
 
 
@@ -70,12 +66,8 @@ def length_of_longest_substring_n2(s):
             numerical_element = ord(s[j])
             frequency_list[numerical_element] += 1 
             length += 1
-            if length > longest_length:
-                    longest_length = length
-
-    return longest_length
-            
-
+            longest_length = max(longest_length, length)
+    return longest_length      
 
 
 # TODO: implement this function. You may delete this comment when you are done.
@@ -104,8 +96,7 @@ def length_of_longest_substring_n(s):
                     break
             else:
                 length += 1
-                if length > longest_length:
-                        longest_length = length
+                longest_length = max(longest_length, length)
 
     return longest_length
             
